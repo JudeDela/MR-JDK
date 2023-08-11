@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c0d5a6fb27.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/Jude-designstyle-boots-l.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#Header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>CISCO DEVNET INSTRUCTOR</p>
+                <h1>Hi, I'm <span>Jude</span> <br> From Ghana</h1>
+
+            </div>
+        
+        </div>
+    </div>
+    <!--------about------->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/gr.JPG">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am a dedicated and knowledgeable Cisco training instructor, 
+                        committed to empowering individuals with the skills and expertise needed to excel in the world of networking and information technology.
+                        With a passion for technology and a deep understanding of Cisco's products and solutions, 
+                        I have embarked on a journey to educate and inspire the next generation of IT professionals.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links " onclick="opentab('Experiences')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        
+
+
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>Cisco DevNet</span><br>Training Instructor</li>
+                            <li><span>Repairs</span><br>Computer(Laptops) and Phones</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents  " id="Experiences">
+                        <ul>
+                            <li><span>2022-current</span><br>Training Instructor at Cisco</li>
+                            <li><span>2019-current</span><br>Technician at WE DE BEST I.T SOLUTIONS</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents  " id="Education">
+                        <ul>
+                            <li><span>2016</span><br>Junior Certificate</li>
+                            <li><span>2019</span><br>Senior Certificate</li>
+                            <li><span>2021-2022</span><br>CCNA 1,2,3 IT Essentials and DevNet</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------projects------->
+    <div id="Projects">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="projects-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>DenNet</h2>
+                    <p>Cisco DevNet training 
+                        for any interested person, 
+                        and also all IT professionals </p>
+                        <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h2>Repairs</h2>
+                    <p> Innovating the methods of gadgets repairs, 
+                        and also implementing training session to 
+                        train people with interests </p>
+                        <a href="#">Learn more</a>
+                </div>
+
+            </div>
+            <a href="#" class="btn">See More</a>
+
+        </div>
+    </div>
+    <!-------------contact---------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>torwoejude123@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+233541788624</p>
+                </div>
+                
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
+                        <button type="Submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @ Jude</p>
+
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu")
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px"
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby0HhRvswhmMF5d0A30rdPjNCgJb8w4yzBYCt1Y8bNezfghf8iFl3B6pa-FkC95MI328w/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
